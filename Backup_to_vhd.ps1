@@ -2,7 +2,7 @@ $PathVHD = '\\192.168.1.169\nt5_backup'
 $NameVHD = 'root-dc1.vhd'
 $PathNameVHD = $PathVHD + '\' + $NameVHD
 
-New-SmbMapping -RemotePath $PathVHD -UserName oblgaz56\autoadmin -Password autoadmin
+New-SmbMapping -RemotePath $PathVHD -UserName domain\user -Password userpass
 
 $Disk = (Mount-DiskImage -ImagePath $PathNameVHD -PassThru | Get-Volume).DriveLetter + ':'
 
