@@ -1,6 +1,7 @@
 . .\Get-TargetFolderItem.ps1
+. .\New-ArchivedItem.ps1
 
 'd:\111' `
-    | Get-TargetFolderItem -TargetFolder 'd:\111' -NoTempFiles -NoVideoFiles -NoArchivedFiles `
-        | write-host
-    
+    | Get-TargetFolderItem 
+        | New-ArchivedItem -NoTempFiles -NoVideoFiles -NoArchivedFiles `
+            | write-host
